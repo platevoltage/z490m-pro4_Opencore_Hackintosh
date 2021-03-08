@@ -443,6 +443,8 @@
 		<array/>
 		<key>Boot</key>
 		<dict>
+			<key>LauncherOption</key>
+			<string>Full</string>
 			<key>ConsoleAttributes</key>
 			<integer>0</integer>
 			<key>HibernateMode</key>
