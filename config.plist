@@ -94,8 +94,37 @@
 				<false/>
 			</dict>
 		</array>
+		<key>Patch</key>
+		<array>
+			<dict>
+				<key>Arch</key>
+				<string>Any</string>
+				<key>Comment</key>
+				<string>macOS to hacOS</string>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Enabled</key>
+				<false/>
+				<key>Find</key>
+				<data>bWFjT1M=</data>
+				<key>Identifier</key>
+				<string>Apple</string>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>Replace</key>
+				<data>aGFjT1M=</data>
+				<key>ReplaceMask</key>
+				<data></data>
+				<key>Skip</key>
+				<integer>0</integer>
+			</dict>
+		</array>
 		<key>Quirks</key>
 		<dict>
+			<key>AllowRelocationBlock</key>
+			<false/>
 			<key>AvoidRuntimeDefrag</key>
 			<true/>
 			<key>DevirtualiseMmio</key>
@@ -109,6 +138,8 @@
 			<key>EnableSafeModeSlide</key>
 			<true/>
 			<key>EnableWriteUnprotector</key>
+			<false/>
+			<key>ForceBooterSignature</key>
 			<false/>
 			<key>ForceExitBootServices</key>
 			<false/>
@@ -136,6 +167,11 @@
 	<dict>
 		<key>Add</key>
 		<dict>
+			<key>PciRoot(0x0)/Pci(0x1b,0x0)</key>
+			<dict>
+				<key>layout-id</key>
+				<data>AQAAAA==</data>
+			</dict>
 			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
 			<dict>
 				<key>PP_PhmSoftPowerPlayTable</key>
@@ -443,6 +479,10 @@
 		<array/>
 		<key>Boot</key>
 		<dict>
+			<key>PickerVariant</key>
+			<string>Auto</string>
+			<key>LauncherPath</key>
+			<string>Default</string>
 			<key>LauncherOption</key>
 			<string>Full</string>
 			<key>ConsoleAttributes</key>
@@ -488,6 +528,8 @@
 		<key>Entries</key>
 		<array>
 			<dict>
+				<key>TextMode</key>
+				<false/>
 				<key>Arguments</key>
 				<string></string>
 				<key>Auxiliary</key>
@@ -504,6 +546,8 @@
 		</array>
 		<key>Security</key>
 		<dict>
+			<key>BlacklistAppleUpdate</key>
+			<true/>
 			<key>AllowNvramReset</key>
 			<true/>
 			<key>AllowSetDefault</key>
@@ -536,6 +580,10 @@
 		<key>Tools</key>
 		<array>
 			<dict>
+				<key>TextMode</key>
+				<false/>
+				<key>RealPath</key>
+				<false/>
 				<key>Arguments</key>
 				<string></string>
 				<key>Auxiliary</key>
@@ -588,7 +636,7 @@
 				<key>boot-args</key>
 				<string>-v keepsyms=1 debug=0x100 alcid=1</string>
 				<key>csr-active-config</key>
-				<data>AAAAAA==</data>
+				<data>5wMAAA==</data>
 				<key>prev-lang:kbd</key>
 				<string>en-US:0</string>
 				<key>run-efi-updater</key>
@@ -646,12 +694,16 @@
 	</dict>
 	<key>PlatformInfo</key>
 	<dict>
+		<key>UseRawUuidEncoding</key>
+		<false/>
 		<key>Automatic</key>
 		<true/>
 		<key>CustomMemory</key>
 		<false/>
 		<key>Generic</key>
 		<dict>
+			<key>MaxBIOSVersion</key>
+			<false/>
 			<key>AdviseWindows</key>
 			<false/>
 			<key>MLB</key>
@@ -695,6 +747,21 @@
 	</dict>
 	<key>UEFI</key>
 	<dict>
+		<key>AppleInput</key>
+		<dict>
+			<key>AppleEvent</key>
+			<string>Builtin</string>
+			<key>CustomDelays</key>
+			<string>Auto</string>
+			<key>KeyInitialDelay</key>
+			<integer>0</integer>
+			<key>KeySubsequentDelay</key>
+			<integer>5</integer>
+			<key>PointerSpeedDiv</key>
+			<integer>1</integer>
+			<key>PointerSpeedMul</key>
+			<integer>1</integer>
+		</dict>
 		<key>APFS</key>
 		<dict>
 			<key>EnableJumpstart</key>
@@ -712,6 +779,12 @@
 		</dict>
 		<key>Audio</key>
 		<dict>
+			<key>PlayChime</key>
+			<string>Auto</string>
+			<key>SetupDelay</key>
+			<integer>0</integer>
+			<key>ResetTrafficClass</key>
+			<false/>
 			<key>AudioCodec</key>
 			<integer>0</integer>
 			<key>AudioDevice</key>
@@ -722,8 +795,6 @@
 			<true/>
 			<key>MinimumVolume</key>
 			<integer>50</integer>
-			<key>PlayChime</key>
-			<true/>
 			<key>VolumeAmplifier</key>
 			<integer>120</integer>
 		</dict>
@@ -758,6 +829,8 @@
 		</dict>
 		<key>Output</key>
 		<dict>
+			<key>GopPassThrough</key>
+			<false/>
 			<key>ClearScreenOnModeSwitch</key>
 			<false/>
 			<key>ConsoleMode</key>
@@ -824,6 +897,10 @@
 		</dict>
 		<key>Quirks</key>
 		<dict>
+			<key>DisableSecurityPolicy</key>
+			<false/>
+			<key>ActivateHpetSupport</key>
+			<false/>
 			<key>DeduplicateBootOrder</key>
 			<true/>
 			<key>ExitBootServicesDelay</key>
